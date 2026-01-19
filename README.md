@@ -2,6 +2,27 @@
 - Atlas Cluster Connecting String
 - OpenAI API Key
 - Voyage AI API Key
+- Data loaded into Atlas
+
+# Create the following vector search index, named vector_index, on the chunked_data collection in your Atlas Cluster:
+```
+{
+  "fields": [
+    {
+      "numDimensions": 1536,
+      "path": "embedding",
+      "similarity": "cosine",
+      "type": "vector"
+    },
+    {
+      "path": "hasCode",
+      "type": "filter"
+    }
+  ]
+}
+```
+
+Note: The default number of dimensions for the voyage-3.5-lite embedding model is 1024. We have the option to use 256, 512, or 2048 dimensions with the voyage 3.5 models.
 
 ## Usage
 # Install the requirements
